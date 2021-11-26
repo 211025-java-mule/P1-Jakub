@@ -1,6 +1,6 @@
 package com.revature.p1.service;
 
-import com.revature.p1.Model.TranslationList;
+import com.revature.p1.model.TranslationList;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 public class TranslatorService {
 
     private final RestTemplate restTemplate;
+    private static final String API_KEY = System.getenv("api_key");
 
     public TranslatorService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -18,9 +19,9 @@ public class TranslatorService {
 
     //Returns TranslationList object based on the given string, uses the DeepL API
     public TranslationList getTranslation(String stringToTranslate) {
-
+        System.out.println(API_KEY);
         ResponseEntity<TranslationList> responseEntity = restTemplate.exchange(
-                "https://api-free.deepl.com/v2/translate?auth_key=9b4e3079-e7c7-0384-6a03-1373f3a95e39:fx&text=" + stringToTranslate + "&target_lang=PL",
+                "https://api-free.deepl.com/v2/translate?auth_key=" + API_KEY + "&text=" + stringToTranslate + "&target_lang=PL",
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
                 TranslationList.class

@@ -10,5 +10,8 @@
         <module name="P1-Jakub" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="P1-Jakub" target="14" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.revature.p1.Model;
+package com.revature.p1.model;
 
 import lombok.Data;
 

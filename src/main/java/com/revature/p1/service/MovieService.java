@@ -1,7 +1,6 @@
 package com.revature.p1.service;
 
-import com.revature.p1.Model.Movie;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.revature.p1.model.Movie;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,6 @@ public class MovieService {
 
     private final RestTemplate restTemplate;
 
-//    @Autowired
     public MovieService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
@@ -30,13 +28,6 @@ public class MovieService {
         );
         List<Movie> movies = responseEntity.getBody();
         return movies;
-    }
-
-    //Returns an array of movies from P0 API
-    public Movie[] getMovieArray () {
-        ResponseEntity<Movie[]> responseEntity = restTemplate.getForEntity("http://localhost:8082/myMovies", Movie[].class);
-        Movie[] movieArray = responseEntity.getBody();
-        return movieArray;
     }
 
 }
