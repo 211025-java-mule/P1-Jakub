@@ -13,9 +13,11 @@ import java.util.List;
 public class MovieService {
 
     private final RestTemplate restTemplate;
+    private final TranslatorService translatorService;
 
-    public MovieService(RestTemplate restTemplate) {
+    public MovieService(RestTemplate restTemplate, TranslatorService translatorService) {
         this.restTemplate = restTemplate;
+        this.translatorService = translatorService;
     }
 
     //Returns a list of movies from P0 API
@@ -28,6 +30,15 @@ public class MovieService {
         );
         List<Movie> movies = responseEntity.getBody();
         return movies;
+    }
+
+    //Translate the plot of each movie form given list to Polish, uses DeepL API
+    public List<Movie> translatePlot(List<Movie> movieList){
+        for (Movie movie : movieList){
+            String polotPL = translatorService.getTranslation(movie.plot).getTranslations().get(0).getText();
+            movie.setPlot(polotPL);
+        }
+        return movieList;
     }
 
 }

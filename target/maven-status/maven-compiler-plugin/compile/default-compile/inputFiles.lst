@@ -1,0 +1,10 @@
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/App.java
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/model/Translation.java
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/model/TranslationList.java
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/service/MovieService.java
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/repository/MovieRepository.java
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/controller/MoviesController.java
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/model/Movie.java
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/config/BeanConfig.java
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/config/WebConfig.java
+/home/jakub/projekty/revature_02/P1-Jakub/src/main/java/com/revature/p1/service/TranslatorService.java

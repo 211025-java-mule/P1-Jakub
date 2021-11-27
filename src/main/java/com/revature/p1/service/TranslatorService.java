@@ -19,7 +19,6 @@ public class TranslatorService {
 
     //Returns TranslationList object based on the given string, uses the DeepL API
     public TranslationList getTranslation(String stringToTranslate) {
-        System.out.println(API_KEY);
         ResponseEntity<TranslationList> responseEntity = restTemplate.exchange(
                 "https://api-free.deepl.com/v2/translate?auth_key=" + API_KEY + "&text=" + stringToTranslate + "&target_lang=PL",
                 HttpMethod.GET,
