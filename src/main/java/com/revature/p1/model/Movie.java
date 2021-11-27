@@ -22,4 +22,5 @@ public class Movie {
     public String imDbRating;
     @Column(length = 1000)
     public String plot;
+    public boolean netflix;
 }

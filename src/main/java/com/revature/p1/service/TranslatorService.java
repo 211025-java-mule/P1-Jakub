@@ -11,13 +11,13 @@ import org.springframework.web.client.RestTemplate;
 public class TranslatorService {
 
     private final RestTemplate restTemplate;
-    private static final String API_KEY = System.getenv("api_key");
+    private static final String API_KEY = System.getenv("DeepL_key");
 
     public TranslatorService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
-    //Returns TranslationList object based on the given string, uses the DeepL API
+    //Returns TranslationList object based on the given string, uses the DeepL API.
     public TranslationList getTranslation(String stringToTranslate) {
         ResponseEntity<TranslationList> responseEntity = restTemplate.exchange(
                 "https://api-free.deepl.com/v2/translate?auth_key=" + API_KEY + "&text=" + stringToTranslate + "&target_lang=PL",
